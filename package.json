@@ -1,0 +1,51 @@
+{
+	"name": "kether.pl-sub-server",
+	"version": "3.0",
+	"description": "A MySQL-powered server that posts '!sub' requests on the Steam Group Chat",
+	"main": "index.js",
+	"scripts": {
+		"start": "tsc --watch --preserveWatchOutput",
+		"server": "nodemon dist/index.js"
+	},
+	"keywords": [],
+	"author": "Krevik",
+	"maintainers": [
+		"Krevik",
+		"StarterX4"
+	],
+	"homepage": "https://github.com/KetherPL/node-sub-server",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KetherPL/node-sub-server.git"
+	},
+	"bugs": {
+		"url": "https://github.com/KetherPL/node-sub-server/issues"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^1.8.4",
+		"cross-fetch": "^4.1.0",
+		"express": "^5.1.0",
+		"mysql": "^2.18.1",
+		"node-cache": "^5.1.2",
+		"pino": "^9.6.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"sqlite3": "^5.1.7",
+		"steam-user": "^5.2.0"
+	},
+	"devDependencies": {
+		"@types/express": "^5.0.1",
+		"@types/mysql": "^2.15.27",
+		"@types/node": "^22.14.0",
+		"@types/react": "^19.1.0",
+		"@types/react-dom": "^19.1.1",
+		"@types/sqlite3": "^5.1.0",
+		"@types/steam-user": "^5.0.4",
+		"nodemon": "^3.1.9",
+		"ts-loader": "^9.5.2",
+		"typescript": "^5.8.3",
+		"webpack": "^5.99.0",
+		"webpack-cli": "^6.0.1"
+	}
+}
