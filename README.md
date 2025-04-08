@@ -2,6 +2,8 @@
 
 This project is a Node.js-based server designed to support the Kether.pl Left 4 Dead 2 (L4D2) server, with sub-posting role.
 
+This is a partial continuation of the legacy [NodeJS-based Kether.pl-Website-Server](https://github.com/KetherPL/Kether.pl-website-server/tree/nodejs) project codebase, keeping just the '!sub' functionality. The rest of the functionality (except Game Stats) has been moved to the [Rust port](https://github.com/KetherPL/Kether.pl-website-server/tree/rust).
+
 ## Key Features
 
 *   **Steam Bot Integration:** The server includes a Steam bot that can log in to a Steam account and send messages to the selected Steam chat group channel.
