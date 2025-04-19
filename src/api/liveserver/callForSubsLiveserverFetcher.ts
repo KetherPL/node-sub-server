@@ -12,16 +12,21 @@ interface CallForSub {
     SteamID: string;
 }
 
+async function fetchdata(): Promise<CallForSub[]> {
+    await callForSubsLiveserverFetcher.getLiveServerCallForSubsDatabaseAsync();
+    return [];
+}
+
 export const callForSubsLiveserverFetcher = {
     fetchProcessAndPostOnChatGroupAsync: async () => {
         try {
-            const callsForSub: CallForSub[] = await callForSubsLiveserverFetcher.getLiveServerCallForSubsDatabaseAsync();
+            const callsForSub = fetchdata();
 
-            if (callsForSub && callsForSub.length > 0) {
-                for (const callForSub of callsForSub) {
+            //if (callsForSub && callsForSub.length > 0) {
+                for (const callForSub of await callsForSub) {
                     await callForSubsLiveserverFetcher.processCallForSubAsync(callForSub);
                 }
-            }
+            //}
         } catch (error) {
             loggerUtils.logError(`Error in fetchProcessAndPostOnChatGroupAsync: ${error}`);
         }
