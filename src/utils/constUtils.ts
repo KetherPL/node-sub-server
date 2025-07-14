@@ -1,3 +1,3 @@
 export const constUtils = {
-    SERVER_PORT: 3001,
+    SERVER_PORT: 3002,
 };
