@@ -7,8 +7,8 @@ This is a partial continuation of the legacy [NodeJS-based Kether.pl-Website-Ser
 ## Key Features
 
 *   **Steam Bot Integration:** The server includes a Steam bot that can log in to a Steam account and send messages to the selected Steam chat group channel.
-*   **LiveServer Call for Subs:** The core functionality involves fetching and processing "call for sub" requests from a live L4D2 server (requires a [dedicated SourceMod plugin](https://github.com/Krevik/Kether.pl-L4D2-Server/blob/kether_2.0/addons/sourcemod/scripting/kether/l4d2_database_call_for_sub_kether.sp))
-*   **REST API Endpoint:** Provides a simple REST endpoint for the L4D2 game server to retrieve SteamID64 (via POST method data) and send Call For Sub requests.
+*   **LiveServer Call for Subs:** The core functionality involves fetching and processing "call for sub" requests from a live L4D2 server (requires a [dedicated SourceMod plugin](https://github.com/Krevik/Kether.pl-L4D2-Server/blob/kether_2.0/addons/sourcemod/scripting/kether/l4d2_call_for_sub_rest.sp))
+*   **REST API Endpoint:** Provides a simple REST endpoint for the L4D2 game server to retrieve JSON SteamID64 (via POST method data) and send Call For Sub requests.
 *   **Steam API Integration:** It uses the Steam API to fetch player information, such as player names, based on SteamIDs.
 *   **Error Logging:** The server includes robust error logging to help with debugging and monitoring.
 
