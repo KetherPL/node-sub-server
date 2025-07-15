@@ -19,7 +19,7 @@ async function startSteamBot() {
 startSteamBot();
 
 app.use(express.urlencoded({ extended: true }) as RequestHandler);
-app.use(express.text() as RequestHandler);
+app.use(express.json() as RequestHandler);
 app.use(loggerUtils.logRequests);
 app.use(callForSubRouter);
 

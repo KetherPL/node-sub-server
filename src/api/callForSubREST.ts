@@ -8,16 +8,15 @@ const callForSubRouter = Router();
 
 callForSubRouter.post('/api/callForSub', async (req: Request, res: Response) => {
     loggerUtils.logRequests(req, res, () => {});
-
+    
     try {
-        // This code now assumes you are using `express.text()` middleware
-        // to parse a raw string body.
-        const steamID = req.body;
+        // The request body should be a JSON object like: { "steamID": "..." }
+        const { steamID } = req.body;
 
         // Validate that steamID exists and is a non-empty string.
         if (typeof steamID !== 'string' || steamID.length === 0) {
-            loggerUtils.logError(`Request body must be a raw string containing the SteamID64. Received: ${steamID}`);
-            res.status(400).send('Request body must be a raw string containing the SteamID64.');
+            loggerUtils.logError(`Request body must be a JSON object with a 'steamID' property. Received: ${JSON.stringify(req.body)}`);
+            res.status(400).send("Request body must be a JSON object with a 'steamID' property.");
             return;
         }
 
