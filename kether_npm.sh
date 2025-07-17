@@ -28,7 +28,7 @@ case "$1" in
 		if [ -e $DIR ]; then
 			cd $DIR
 			screen -d -m -S $NAME $DAEMON $ST
-			screen -d -m -S $NAME2 $DAEMON $SV
+			screen -d -m -L -S $NAME2 $DAEMON $SV
 		else
 			echo "No such directory: $DIR!"
 		fi
@@ -57,7 +57,7 @@ case "$1" in
 		echo -n "Starting $DESC: $NAME / $NAME2"
 		cd $DIR
 		screen -d -m -S $NAME $DAEMON $ST
-		screen -d -m -S $NAME2 $DAEMON $SV
+		screen -d -m -L -S $NAME2 $DAEMON $SV
 		echo " ... done."
 		;;
 

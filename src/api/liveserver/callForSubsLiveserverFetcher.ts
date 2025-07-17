@@ -6,29 +6,7 @@ import { STEAM_API_KEY } from '../../../.sub.auth';
 
 export const callForSubsLiveserverFetcher = {
 
-    // processCallForSubAsync: async (callForSub: CallForSub) => {
-    //     try {
-    //         await callForSubsLiveserverFetcher.deleteCallForSubFromDatabaseAsync(callForSub.LP);
-
-    //         const accid = callForSubsLiveserverFetcher.extractAccId(callForSub.SteamID);
-    //         if (!accid) {
-    //             loggerUtils.logError(`Invalid SteamID format: ${callForSub.SteamID}`);
-    //             return;
-    //         }
-
-    //         const callerName = await callForSubsLiveserverFetcher.fetchCallerNameAsync(callForSub.SteamID);
-    //         if (!callerName) {
-    //             loggerUtils.logError(`Could not fetch caller name for SteamID: ${callForSub.SteamID}`);
-    //             return;
-    //         }
-
-    //         await steamBot.sendMessageAsync(`[mention=${accid}]@${callerName}[/mention] called for a sub, [mention=here]@online[/mention]`);
-    //     } catch (error) {
-    //         loggerUtils.logError(`Error processing call for sub: ${error}`);
-    //     }
-    // },
-
-    extractAccId: (steamId: string): string | null => {
+    extractAccId: async (steamId: string): Promise<string | null> => {
         try {
             const sid = new SteamID(steamId);
             const steam3RenderedId = sid.getSteam3RenderedID();
